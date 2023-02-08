@@ -1,0 +1,62 @@
+﻿@model PoliticalPortfolio.VideoTbl
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imgpreview').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+    </script>
+    <section class="content-header">
+        <h1>Add Video <small>(Add Video)</small></h1>
+    </section>
+    <section class="content">
+        @using (Html.BeginForm("Create", "Video", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="box box-warning">
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                <label>Title</label>
+                                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Video Url</label>
+                                @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Cover Image</label>
+                                <input id="Image" onchange="readURL(this);" type="file" name="CoverImage" required />
+                                <img id="imgpreview" class="img-thumbnail" style="width:200px" alt="Preview" />
+                            </div>
+
+
+                        </div>
+                        <div class="box-footer">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            <a href="/Admin/Video/Index" class="btn btn-dropbox">Back to List</a>
+        </div>
+    </section>

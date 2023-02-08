@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpOceans">
+    <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png">
+    <title>Electian - Political Campaign HTML5 Template</title>
+    <link href="/assets/css/themify-icons.css" rel="stylesheet">
+    <link href="/assets/css/flaticon.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="/assets/css/owl.theme.css" rel="stylesheet">
+    <link href="/assets/css/slick.css" rel="stylesheet">
+    <link href="/assets/css/slick-theme.css" rel="stylesheet">
+    <link href="/assets/css/swiper.min.css" rel="stylesheet">
+    <link href="/assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="/assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="/assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="/assets/sass/style.css" rel="stylesheet">
+    <link href="~/assets/css/test.css" rel="stylesheet" />
+    <script>
+        window.onload = function () {
+            $("#success-alert").fadeTo(3000, 700).slideUp(700, function () {
+                $("#success-alert").slideUp(700);
+            });
+
+            $("#fail-alert").fadeTo(3000, 700).slideUp(700, function () {
+                $("#fail-alert").slideUp(700);
+            });
+        };
+    </script>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="vertical-centered-box">
+                <div class="content">
+                    <div class="loader-circle"></div>
+                    <div class="loader-line-mask">
+                        <div class="loader-line"></div>
+                    </div>
+                    <img src="/assets/images/loader.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- end preloader -->
+        <!-- Start header -->
+        <header id="header" class="wpo-header-style-4">
+            <div class="topbar">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col col-md-8 col-sm-12 col-12">
+                            <div class="contact-intro">
+                                <ul>
+                                    <li><i class="fi flaticon-phone-call-1"></i>Call Us: <a href="tel:9414619256" style="color: #e4e5e8">9414619256</a></li>
+                                    @*<li><i class="fi flaticon-email-1"></i>demo@example.com</li>*@
+                                    <li><i class="fi ti-location-pin"></i>Mehta Gali Barisadri</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-md-4 col-sm-12 col-12">
+                            <div class="contact-info">
+                                <ul>
+                                    <li><a href="about.html">Social Address :</a></li>
+                                    <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#"><i class="ti-instagram"></i></a></li>
+                                    <li><a href="#"><i class="ti-google"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end topbar -->
+            <div class="wpo-site-header">
+                <nav class="navigation navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-lg-3 col-md-3 col-sm-3  col-3 d-lg-none dl-block">
+                                <div class="mobail-menu">
+                                    <button type="button" class="navbar-toggler open-btn">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar first-angle"></span>
+                                        <span class="icon-bar middle-angle"></span>
+                                        <span class="icon-bar last-angle"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-5 col-sm-4 col-6" style="padding-left:0px">
+                                <div class="navbar-header">
+                                    <a class="navbar-brand" href="/">
+                                        <img src="/assets/images/Bjp-Flag-1.png"
+                                             alt="logo">
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-1 col-sm-1 col-1">
+                                <div id="navbar" class="collapse navbar-collapse navigation-holder">
+                                    <button class="menu-close"><i class="ti-close"></i></button>
+                                    <ul class="nav navbar-nav mb-2 mb-lg-0">
+                                        <li><a  href="/">Home</a></li>
+                                        <li><a href="/AboutUs">My Portfolio</a></li>
+                                        <li><a href="/Event">News</a></li>
+                                        @*<li><a href="/News">Events</a></li>*@
+                                        <li><a href="/Album">Album</a></li>
+                                        <li><a href="/Video">Video</a></li>
+                                        <li><a href="/ContactUs">Contact</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-2">
+                                <div class="header-right">
+                                    <div class="close-form">
+                                        <a class="theme-btn" href="/AboutUs">
+                                            <span class="text">About Me</span>
+                                            <span class="mobile">
+                                                <i class="fi flaticon-user"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end of header -->
+
+        @RenderBody()
+
+        <!-- start of wpo-site-footer-section -->
+        <footer class="wpo-site-footer">
+            <div class="shape-1">
+                <svg width="795" height="12" viewBox="0 0 795 12" fill="none">
+                    <rect width="795" height="12" fill="url(#paint0_linear_1_223)" />
+                    <defs>
+                        <linearGradient id="paint0_linear_1_223" x1="795" y1="5.99883" x2="9.55538e-10" y2="5.99883"
+                                        gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#274DCF" />
+                            <stop offset="1" stop-color="white" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="shape-2">
+                <svg width="795" height="12" viewBox="0 0 795 12" fill="none">
+                    <rect width="795" height="12" fill="url(#paint0_linear_1_224)" />
+                    <defs>
+                        <linearGradient id="paint0_linear_1_224" x1="2.31964e-06" y1="5.99883" x2="795" y2="5.99898"
+                                        gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#ff8400" />
+                            <stop offset="1" stop-color="white" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="wpo-upper-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="widget about-widget">
+                                <div class="logo widget-title">
+                                    <img src="/assets/images/Bjp-Flag-1.png"
+                                         alt="logo">
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-google"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="widget link-widget">
+                                <div class="widget-title">
+                                    <h3>quick links:</h3>
+                                </div>
+                                <ul>
+                                    <li><a class="active" href="/">Home</a></li>
+                                    <li><a href="/Event">Events</a></li>
+                                    <li><a href="/News">News</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="/ContactUs">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="widget wpo-service-link-widget">
+                                <div class="widget-title">
+                                    <h3>Contact Us</h3>
+                                </div>
+                                <div class="contact-ft">
+                                    <ul>
+                                        <li>
+                                            <i class="fi ti-location-pin"></i>68D, Belsion Town 2365
+                                            <br> Fna city, LH 3656, USA
+                                        </li>
+                                        <li>
+                                            <i class="fi flaticon-phone-call-1"></i>+ 8 (123) 123 456 789
+                                            <br>
+                                            + 8 (123) 123 456 789
+                                        </li>
+                                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i>indudus@gmail.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="widget newsletter-widget">
+                                <div class="widget-title">
+                                    <h3>newsletter:</h3>
+                                </div>
+                                <p>Lorem Ipsum has been the industry standard text ever since the printer took.</p>
+                                <form>
+                                    <div class="input-1">
+                                        <input type="email" class="form-control" placeholder="Enter your email"
+                                               required="">
+                                    </div>
+                                    <div class="submit clearfix">
+                                        <button type="submit">
+                                            <i class="fa fa-paper-plane"
+                                               aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </div>
+            <div class="wpo-lower-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <p class="copyright">
+                                Copyright &copy; 2022 Electian by <a href="index.html">wpOceans</a>.
+                                All
+                                Rights Reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end of wpo-site-footer-section -->
+
+
+    </div>
+    <!-- end of page-wrapper -->
+    <!-- All JavaScript files
+    ================================================== -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugins for this template -->
+    <script src="/assets/js/modernizr.custom.js"></script>
+    <script src="/assets/js/jquery.dlmenu.js"></script>
+    <script src="/assets/js/jquery-plugin-collection.js"></script>
+    <!-- Custom script for this template -->
+    <script src="/assets/js/script.js"></script>
+    
+</body>
+</html>

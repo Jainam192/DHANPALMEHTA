@@ -1,0 +1,97 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "NewsDetails";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<!-- start wpo-page-title -->
+<section class="wpo-page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="wpo-breadcumb-wrap">
+                    <h2>News Details</h2>
+                    <ol class="wpo-breadcumb-wrap">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/News">News</a></li>
+
+                    </ol>
+                </div>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+<!-- end page-title -->
+<!-- start of wpo-events-single-area -->
+<section class="wpo-events-single-area wpo-event-section section-padding">
+    <div class="container">
+        @foreach (var Newsitem in Model.News)
+        {
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12">
+                    <div class="events-single-wrap">
+                        <div class="events-single-slider owl-carousel ">
+                            <div class="events-single-img">
+                                <a href="@Newsitem.ImagePath" target="_blank">
+                                    <img src="@Newsitem.ImagePath" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="events-single-info">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="title">Publish Date</th>
+                                    <td class="text">@Newsitem.PublishDate</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="title">Title</th>
+                                    <td class="text">@Newsitem.Title</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="title">Description</th>
+                                    <td class="text">@Newsitem.Description</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<!-- end of wpo-events-single-area -->
+<!-- start wpo-election-mission-section -->
+<section class="wpo-election-mission-section section-padding" style="background: #f9f4f4;padding:0px 0px">
+    <div class="container">
+        <div class="row justify-content-center" >
+            <h2>Related News</h2>
+        </div>
+        <div class="election-mission-wrap">
+            <div class="row">
+                @foreach (var Newsitem in Model.RelatedNews)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12" style="text-align:center;padding-bottom:10px">
+                        <div class="election-mission-content">
+                            <img src="@Newsitem.ImagePath" alt="" style="height:200px;overflow:hidden">
+                            <div class="text">
+                                <h5 style="color: #ffffff">@Newsitem.Title</h5>
+                                <p>
+                                    Publish Date : @Newsitem.PublishDate
+                                </p>
+
+                            </div>
+                        </div>
+                        <a href="/News/NewsDetails?id=@Newsitem.Id" class="theme-btn-s2">Learn More</a>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+   <br /><br />
+</section>
+<!-- end wpo-election-mission-section -->

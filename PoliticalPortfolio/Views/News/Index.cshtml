@@ -1,0 +1,93 @@
+﻿@model IEnumerable<PoliticalPortfolio.NewsTbl>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<!-- start wpo-page-title -->
+<section class="wpo-page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="wpo-breadcumb-wrap">
+                    <h2>News</h2>
+                    <ol class="wpo-breadcumb-wrap">
+                        <li><a href="/">Home</a></li>
+                        <li>News</li>
+                    </ol>
+                </div>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+<!-- end page-title -->
+<!-- start wpo-election-mission-section -->
+<section class="wpo-election-mission-section section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col col-lg-6 col-md-8 col-12">
+                <div class="wpo-section-title">
+                    <div class="section-titl-shape-1">
+                        <svg width="687" height="473" viewBox="0 0 687 473" fill="none">
+                            <g opacity="0.44" filter="url(#filter0_f_1_1040)">
+                                <circle cx="343.5" cy="129.5" r="129.5" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_f_1_1040" x="0" y="-214" width="687" height="687"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                             result="shape" />
+                                    <feGaussianBlur stdDeviation="107" result="effect1_foregroundBlur_1_104" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="section-titl-shape-2">
+                        <svg width="687" height="473" viewBox="0 0 687 473" fill="none">
+                            <g opacity="0.44" filter="url(#filter0_f_1_105)">
+                                <circle cx="343.5" cy="129.5" r="129.5" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_f_1_105" x="0" y="-214" width="687" height="687"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                             result="shape" />
+                                    <feGaussianBlur stdDeviation="107" result="effect1_foregroundBlur_1_105" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span>News</span>
+                    <h2>News Pannel</h2>
+                </div>
+            </div>
+        </div>
+        <div class="election-mission-wrap">
+            <div class="row">
+                @foreach (var Newsitem in Model)
+                {
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12" style="text-align:center;padding-bottom:40px">
+                        <div class="event-item">
+                            <div class="election-mission-content">
+                                <img src="@Newsitem.ImagePath" alt="" style="height:200px;overflow:hidden">
+                                <div class="text">
+                                    <h5 style="color: #ffffff">@Newsitem.Title</h5>
+                                    <p>
+                                        Publish Date : @Newsitem.PublishDate
+                                    </p>
+
+                                </div>
+                            </div>
+                            <a href="/News/NewsDetails?id=@Newsitem.Id" class="theme-btn-s2">View Detail</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <br />
+    </div>
+
+</section>
+<!-- end wpo-election-mission-section -->

@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>LEYU GUZO | Admin</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+    <!-- bootstrap 3.0.2 -->
+    <link href="~/AdminAssets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- font Awesome -->
+    <link href="~/AdminAssets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/AdminAssets/chosen_v1.8.7/chosen.css" />
+    <link href="~/AdminAssets/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/AdminAssets/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />*@
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.~/AdminAssets/js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        window.onload = function () {
+            $("#success-alert").fadeTo(3000, 700).slideUp(700, function () {
+                $("#success-alert").slideUp(700);
+            });
+
+            $("#fail-alert").fadeTo(3000, 700).slideUp(700, function () {
+                $("#fail-alert").slideUp(700);
+            });
+        };
+    </script>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body class="skin-blue">
+    <!-- header logo: style can be found in header.less -->
+    <header class="header">
+        <a href="/Admin/Dashboard" class="logo">
+            <img alt="LEYU GUZO" height="44" />
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li style="margin-top:10px ;">
+                        <a class="btn btn-danger badge pull-right mt15" id="Logout" style="font-size:16px;padding:5px; margin : 4px;" href="/" target="_blank">Go to Website <i class="fa fa-sign-out"></i> </a>
+                    </li>
+                    <li style="margin-top:10px">
+                        <a class="btn btn-danger badge pull-right mt15" style="font-size:16px;padding:5px;" href="@Url.Action("Logout", "Dashboard", null)">Logout <i class="fa fa-sign-out"></i> </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="left-side sidebar-offcanvas">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <div class="user-panel">
+                    <div class="pull-left info">
+                        <p>Welcome  <span>@Session["AdminName"]</span></p>
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                        <small id="Span1"></small>
+                    </div>
+                </div>
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="active"><a href="/Admin/Dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                    <li><a href="/Admin/Album/"><i class="fa fa-image"></i> <span>Manage Album</span></a></li>
+                    <li><a href="/Admin/Event/"><i class="fa fa-calendar "></i> <span>Manage Event</span></a></li>
+                    <li><a href="/Admin/News/"><i class="fa fa-circle"></i> <span>Manage News</span></a></li>
+                    <li><a href="/Admin/Video/"><i class="fa fa-youtube-play"></i> <span>Manage Video</span></a></li>
+                    <li><a href="/Admin/Slider/"><i class="fa fa-sliders"></i> <span>Manage Slider</span></a></li>
+                    <li><a href="/Admin/ContactUs/"><i class="fa fa-list"></i> <span>All Enquiry</span></a></li>
+                    <li><a href="/Admin/ChangePassword"><i class="fa fa-cog"></i> <span>Change Password</span></a></li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <aside class="right-side">
+            @RenderBody()
+        </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+    <!-- jQuery 2.0.2 -->
+    <script src="~/AdminAssets/chosen_v1.8.7/docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="~/AdminAssets/chosen_v1.8.7/chosen.jquery.js" type="text/javascript"></script>
+    <script src="~/AdminAssets/chosen_v1.8.7/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/AdminAssets/chosen_v1.8.7/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="~/AdminAssets/js/jquery.min.js" type="text/javascript"></script>
+    <!-- jQuery UI 1.10.3 -->
+    <script src="~/AdminAssets/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+    <!-- Bootstrap -->
+    <script src="~/AdminAssets/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- InputMask -->
+    @*<script src="~/AdminAssets/timepicker/bootstrap-timepicker.min.js"></script>*@
+    <script src="~/AdminAssets/js/plugins/input-mask/jquery.inputmask.js" type="text/javascript"></script>
+    <script src="~/AdminAssets/js/plugins/input-mask/jquery.inputmask.date.extensions.js" type="text/javascript"></script>
+    <script src="~/AdminAssets/js/plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
+    <!-- AdminLTE App -->
+    <script src="~/AdminAssets/js/AdminLTE/app.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        window.onbeforeunload = function () {
+            var inputs = document.getElementsByTagName("INPUT");
+            for (var i in inputs) {
+                if (inputs[i].type == "button" || inputs[i].type == "submit") {
+                    inputs[i].disabled = true;
+                    inputs[i].value = "Processing...";
+                }
+            }
+            var anchors = document.getElementsByTagName("a");
+            for (var j in anchors) {
+                anchors[j].style = "cursor: not-allowed;opacity: 0.5;";
+                anchors[j].href = "#";
+            }
+        };
+    </script>
+    <script>
+        $(function () {
+            //Timepicker
+            $('.timepicker').timepicker({
+                showInputs: false
+            })
+        })
+    </script>
+</body>
+</html>

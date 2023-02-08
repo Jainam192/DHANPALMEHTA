@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PoliticalPortfolio.AlbumTbl>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<!-- start wpo-page-title -->
+<section class="wpo-page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="wpo-breadcumb-wrap">
+                    <h2>Photo Album</h2>
+                    <ol class="wpo-breadcumb-wrap">
+                        <li><a href="/">Home</a></li>
+                        <li>Album</li>
+                    </ol>
+                </div>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+
+<!-- start wpo-election-donation-section -->
+<section class="wpo-election-donation-section-s2 section-padding">
+    <div class="container">
+        <div class="row-grid wpo-service-slider-s2 owl-carousel">
+            @foreach(var Album in Model) {
+            <div class="grid">
+                <div class="wpo-service-item">
+                    <div class="wpo-service-text">
+                        <div class="service-icon">
+                            <img src="@Album.ImagePath" alt="">
+                        </div>
+                        <h2>@Album.Title</h2>
+                        <a href="/Album/Gallery?id=@Album.Id">View Images</a>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- end wpo-election-donation-section -->

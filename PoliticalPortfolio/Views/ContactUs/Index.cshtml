@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<script>
+    function PhoneNumberValidation() {
+        var mobileno = /^((\\+91-?)|0)?[0-9]{10}$/;
+        var txtmob = document.getElementById("ContactNumber").value;
+        if (txtmob.match(mobileno)) {
+            document.getElementById("msg").innerHTML = "";
+        }
+        else {
+            document.getElementById("msg").innerHTML = "Invalid Phone Number";
+            document.getElementById("ContactNumber").value = "";
+        }
+    }
+</script>
+<!-- start wpo-page-title -->
+<section class="wpo-page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                @if (TempData["FailMessage"] != null)
+                {
+                    <div id="fail-alert" class="alert alert-danger text-center">@TempData["FailMessage"]</div>
+                }
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div id="success-alert" class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+                }
+                <div class="wpo-breadcumb-wrap">
+                    <h2>Contact Us</h2>
+                    <ol class="wpo-breadcumb-wrap">
+                        <li><a href="/">Home</a></li>
+                        <li>Contact</li>
+                    </ol>
+                </div>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+<!-- end page-title -->
+<!-- start wpo-contact-pg-section -->
+<section class="wpo-contact-pg-section section-padding">
+   
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-10 offset-lg-1">
+                <div class="office-info">
+                    <div class="row">
+                        <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
+                            <div class="office-info-item">
+                                <div class="office-info-icon">
+                                    <div class="icon">
+                                        <i class="fi flaticon-maps-and-flags"></i>
+                                    </div>
+                                </div>
+                                <div class="office-info-text">
+                                    <h2>Address</h2>
+                                    <p>7 Green Lake Street Crawfordsville, IN 47933</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
+                            <div class="office-info-item">
+                                <div class="office-info-icon">
+                                    <div class="icon">
+                                        <i class="fi flaticon-email"></i>
+                                    </div>
+                                </div>
+                                <div class="office-info-text">
+                                    <h2>Email Us</h2>
+                                    <p>Electian@gmail.com</p>
+                                    <p>helloyou@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-xl-4 col-lg-6 col-md-6 col-12">
+                            <div class="office-info-item">
+                                <div class="office-info-icon">
+                                    <div class="icon">
+                                        <i class="fi flaticon-phone-call"></i>
+                                    </div>
+                                </div>
+                                <div class="office-info-text">
+                                    <h2>Call Now</h2>
+                                    <p>+1 800 123 456 789</p>
+                                    <p>+1 800 123 654 987</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wpo-contact-form-area">
+
+                    <form method="post" action="/ContactUs/Create">
+                        <div class="fullwidth">
+                            <input type="text" class="form-control" name="Name" id="Name"
+                                   placeholder="Your Name*" required>
+                        </div>
+                        <div class="fullwidth">
+                            <input type="email" class="form-control" name="EmailId" id="EmailId"
+                                   placeholder="Your Email*" required>
+                        </div>
+                        <div class="fullwidth">
+                            <input type="text" class="form-control" name="ContactNumber" id="ContactNumber"
+                                   placeholder="Your Phone*" required>
+                            <span id="msg" style="color:red"></span>
+                        </div>
+
+                        <div class="fullwidth">
+                            <textarea class="form-control" name="Message" id="Message"
+                                      placeholder="Message..."></textarea>
+                        </div>
+                        <div class="submit-area">
+                            <button type="submit" class="theme-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end container -->
+</section>
+<!-- end wpo-contact-pg-section -->

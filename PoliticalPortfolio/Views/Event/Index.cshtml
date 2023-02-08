@@ -1,0 +1,118 @@
+﻿@model IEnumerable<PoliticalPortfolio.EventTbl>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<!-- start wpo-page-title -->
+<section class="wpo-page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="wpo-breadcumb-wrap">
+                    <h2>News</h2>
+                    <ol class="wpo-breadcumb-wrap">
+                        <li><a href="/">Home</a></li>
+                        <li>News</li>
+                    </ol>
+                </div>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+<!-- end page-title -->
+<!-- start wpo-event-section -->
+<section class="wpo-event-section">
+    <div class="container-fluid">
+        <div class="event-wrap">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12" >
+                    <div class="wpo-section-title" style="text-align:center" >
+                        <span>News</span>
+                        <h2>Our News Pannel</h2>
+                    </div>
+                </div>
+                @foreach (var eventitem in Model) {
+                <div class="col-lg-3 col-md-6 col-12">
+                    <a href="/Event/EventDetails?id=@eventitem.Id">
+                        <div class="event-item">
+                            <div class="image" style="height:230px">
+                                <img src="@eventitem.ImagePath" alt="">
+                            </div>
+                            <div class="event-content">
+                                <span>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>@eventitem.Venue
+                                </span><br />
+                                <span class="date">
+                                    <i class="fa fa-calendar"
+                                       aria-hidden="true"></i>@eventitem.EventDate
+                                </span>
+                                <h2><a href="events-single.html">@eventitem.Title</a></h2>
+                                @*<div class="event-date">
+                                    <span class="date">
+                                        <i class="fa fa-calendar"
+                                           aria-hidden="true"></i>@eventitem.EventDate
+                                    </span>
+                                    <span class="time">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>@eventitem.Time
+                                    </span>
+                                </div>*@
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+    @*<div class="shape-1">
+        <svg width="960" height="70" viewBox="0 0 960 70" fill="none">
+            <rect width="960" height="70" transform="matrix(-1 0 0 1 960 0)" fill="url(#paint0_linear_1_168)" />
+            <defs>
+                <linearGradient id="paint0_linear_1_168" x1="2.66246e-06" y1="35.3845" x2="960" y2="35.3845"
+                                gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#ff8400" />
+                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>*@
+    <div class="shape-2">
+        <svg width="960" height="70" viewBox="0 0 960 70" fill="none">
+            <rect width="960" height="70" transform="matrix(-1 0 0 1 960 0)" fill="url(#paint0_linear_1_167)" />
+            <defs>
+                <linearGradient id="paint0_linear_1_167" x1="2.66246e-06" y1="35.3845" x2="960" y2="35.3845"
+                                gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#274DCF" />
+                    <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+    <div class="shape-3">
+        <svg width="354" height="354" viewBox="0 0 354 354" fill="none">
+            <circle cx="177" cy="177" r="177" fill="url(#paint0_linear_1_165)" />
+            <defs>
+                <linearGradient id="paint0_linear_1_165" x1="177" y1="0" x2="177" y2="354"
+                                gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+    <div class="shape-4">
+        <svg width="300" height="300" viewBox="0 0 300 300" fill="none">
+            <circle r="150" transform="matrix(-4.37114e-08 1 1 4.37114e-08 150 150)"
+                    fill="url(#paint0_linear_1_166)" />
+            <defs>
+                <linearGradient id="paint0_linear_1_166" x1="150" y1="0" x2="150" y2="300"
+                                gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+</section>
+<!-- end wpo-event-section -->

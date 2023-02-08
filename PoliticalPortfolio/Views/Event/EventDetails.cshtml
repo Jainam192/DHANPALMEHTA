@@ -1,0 +1,115 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "EventDetails";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<!-- start wpo-page-title -->
+<section class="wpo-page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col col-xs-12">
+                <div class="wpo-breadcumb-wrap">
+                    <h2>News</h2>
+                    <ol class="wpo-breadcumb-wrap">
+                        <li><a href="/">Home</a></li>
+                        <li>News Single</li>
+                    </ol>
+                </div>
+            </div>
+        </div> <!-- end row -->
+    </div> <!-- end container -->
+</section>
+<!-- end page-title -->
+<!-- start of wpo-events-single-area -->
+<section class="wpo-events-single-area wpo-event-section section-padding">
+
+    <div class="container">
+        @foreach (var Event in Model.Event)
+        {
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12">
+                    <div class="events-single-wrap">
+                        <div class="events-single-slider owl-carousel ">
+                            <div class="events-single-img">
+                                <a href="@Event.ImagePath" target="_blank">
+                                    <img src="@Event.ImagePath" alt="">
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="events-single-info">
+                        <table class="table">
+                            <tbody>
+
+                                <tr>
+                                    <th scope="row" class="title">Location:</th>
+                                    <td class="text">@Event.Venue</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="title">Date:</th>
+                                    <td class="text">@Event.EventDate</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="title">Time:</th>
+                                    <td class="text">@Event.Time</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="title">Title</th>
+                                    <td class="text">@Event.Title</td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="title">Description</th>
+                                    <td class="text">@Event.Description</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="events-studies-related">
+            <h2 style="text-align:center">Related News</h2>
+        </div>
+
+        <div class="event-wrap">
+            <div class="row">
+                @foreach (var relatedevent in Model.RelatedEvent)
+                {
+                  
+                <div class="col-lg-4 col-md-6 col-12">
+                    <a href="/Event/EventDetails?id=@relatedevent.Id">
+                        <div class="event-item">
+                            <div class="image" style="height:230px">
+                                <img src="@relatedevent.ImagePath" alt="">
+                            </div>
+                            <div class="event-content">
+                                <span>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>@relatedevent.Venue
+                                </span>
+                                <h3>@relatedevent.Title</h3>
+                                <div class="event-date">
+                                    <span class="date">
+                                        <i class="fa fa-calendar"
+                                           aria-hidden="true"></i>@relatedevent.EventDate
+                                    </span>
+                                    <span class="time">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>@relatedevent.Time
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                    
+                }
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- end of wpo-events-single-area -->
